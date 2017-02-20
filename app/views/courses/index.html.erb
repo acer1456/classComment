@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>課程</th>
+        <th>學期</th>
+        <th>類別</th>
+        <th>老師</th>
+        <!-- <th>心得</th> -->
+        <th>評價</th>
+        <th>發表於</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.semester %></td>
+        <td><%= course.category %></td>
+        <td><%= course.teacher %></td>
+        <!-- <td><%= course.comment %></td> -->
+        <td><%= course.vote %></td>
+        <td><%= time_ago_in_words(course.created_at) %></td>
+        <td><%= link_to "詳細", course, class: "btn btn-sm btn-info" %></td>
+      </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+<!-- <div class="col-md-6">
+  <% @courses.each do |course| %>
+    <p>
+      <h3><%= link_to course.name ,course %></h3>
+      <%= course.teacher %></p>
+      <p align="right">發表於 <%= time_ago_in_words(course.created_at) %> 前</p>
+      <hr>
+  <% end %>
+</div> -->
+
+
+<br>
