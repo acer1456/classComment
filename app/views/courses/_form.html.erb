@@ -17,36 +17,49 @@
 
         <form class="form-signin">
 
-          <div class="col-sm-10">
-            <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-3">
           <%= f.label :課程名稱 %><br>
           <%= f.text_field :name, autofocus: true, type: "text", class: "form-control" %>
             </div>
+
           <br />
-            <div class="col-md-5">
+
+            <div class="col-md-3">
           <%= f.label :學期 %><br>
           <%= f.text_field :semester, autofocus: true, type: "text", class: "form-control" %>
             </div>
-          </div>
-          <br />
 
+
+          <br />
+            <div class="col-md-3">
           <%= f.label :類別 %><br>
           <%= f.text_field :category, autofocus: true, type: "text", class: "form-control" %>
+            </div>
 
           <br />
 
+            <div class="col-md-3">
           <%= f.label :課程老師 %><br>
           <%= f.text_field :teacher, autofocus: true, type: "text", class: "form-control" %>
+            </div>
+          </div>
 
           <br />
 
+          <div class="row">
+            <div class="col-md-6">
           <%= f.label :心得建議 %><br>
           <%= f.text_area :comment, autofocus: true, class: "form-control" %>
+            </div>
+
 
           <br />
-
+            <div class="col-md-6">
           <%= f.label :上課內容 %><br>
           <%= f.text_area :detail, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
 
           <br />
 

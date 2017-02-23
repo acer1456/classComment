@@ -4,40 +4,22 @@
   }
 </style>
 
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 
   <h3><%= @course.name %></h3>
-  <hr>
-
-  <p><b>學期:</b>
-    <span><%= @course.semester %></span></p>
-
-  <p><b>類別:</b>
-    <span><%= @course.category %></span></p>
-
-  <p><b>授課老師:</b>
-    <span><%= @course.teacher %></span></p>
-
     <hr>
-
-  <h6><strong>修課心得:</strong></h6>
-    <p><span><%= @course.comment %></span></p>
-
-    <br>
-
-  <h6><strong>上課內容:</strong></h6>
-    <p><span><%= @course.detail %></span></p>
-
-    <br>
-
-  <h6><strong>考試方式:</strong></h6>
-    <p><span><%= @course.exam %></span></p>
-
+  <p><b>學期:</b><span><%= @course.semester %></span></p>
+  <p><b>類別:</b><span><%= @course.category %></span></p>
+  <p><b>授課老師:</b><span><%= @course.teacher %></span></p>
     <hr>
-
-  <p><strong>課程評價:</strong>
-      <span> <%=@course.vote %></span></p>
+  <h6><strong>修課心得:</strong></h6><p><span><%= @course.comment %></span></p>
+    <br>
+  <h6><strong>上課內容:</strong></h6><p><span><%= @course.detail %></span></p>
+    <br>
+  <h6><strong>考試方式:</strong></h6><p><span><%= @course.exam %></span></p>
+    <hr>
+  <p><strong>課程評價:</strong><span> <%=@course.vote %></span></p>
 
   <% if user_signed_in? %>
   <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %> |
