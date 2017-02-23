@@ -2,10 +2,14 @@
 <html>
 <head>
   <title>ClassComment</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
 
   <style media="screen">
     body{
@@ -17,29 +21,14 @@
 </head>
 <body>
 
-  <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" style="background-color: #34495E;">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-inverse" style="background-color: #34495E;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <nav class="navbar navbar-inverse" style="background-color: #34495E;">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <%= link_to '選課世新 SHU Course', root_path, class: 'navbar-brand' %>
-</nav>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <!-- <a class="nav-link" href="#">學分輕鬆拿</a> -->
-      </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          海量知識衝
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">台灣大學</a>
-          <a class="dropdown-item" href="#">政治大學</a>
-          <a class="dropdown-item" href="#">師範大學</a>
-          <a class="dropdown-item" href="#">世新大學</a>
-        </div>
-      </li> -->
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <!-- <li><a class="nav-link" href="#">學分輕鬆拿</a></li> -->
     </ul>
     <ul class="navbar-nav navbar-right" style=" letter-spacing:10px">
       <% unless user_signed_in? %>
@@ -57,18 +46,18 @@
 </nav>
 
 <% if notice %>
-  <!-- <p class="alert alert-success"><%= notice %></p> -->
+  <p class="alert alert-success" align="center"><%= notice %></p>
 <% end %>
 <% if alert %>
-  <!-- <p class="alert alert-danger"><%= alert %></p> -->
+  <p class="alert alert-danger" align="center"><%= alert %></p>
 <% end %>
 
-<div  style="padding:100px">
-       <%= yield %>
+<div class="container" style="padding-top:30px">
+<%= yield %>
 </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 </body>
 </html>

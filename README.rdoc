@@ -1,28 +1,30 @@
-== README
+== 說明文件
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+這是一個線上課程心得分享平台，能夠很簡單地讓同學們值估店分享對於課程的觀感！
 
-Things you may want to cover:
+== 功能
 
-* Ruby version
+* 課程（新增、刪除、修改）
+* FB 登入（製作中）
+* 檢舉課程 (製作中)
 
-* System dependencies
+== 使用的 Function
 
-* Configuration
+* Bootstrap 4 aplha
+* Devise FB Login
 
-* Database creation
+== 使用此專案方法
 
-* Database initialization
+請先使用以下方法下載至本地端：
+<tt>$ git clone https://github.com/acer1456/classComment.git</tt>
 
-* How to run the test suite
+進入專案資料夾：
+<tt>$ cd classComment</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+進行 migrate 建立資料庫：
+<tt>$ rake db:migrate</tt>
 
-* Deployment instructions
+打開伺服器即可開始測試使用：
+<tt>$ rails s</tt>
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== 感謝
