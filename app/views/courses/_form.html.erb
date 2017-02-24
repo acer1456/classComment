@@ -26,15 +26,17 @@
           <br />
 
             <div class="col-md-3">
-          <%= f.label :學期 %><br>
-          <%= f.text_field :semester, autofocus: true, type: "text", class: "form-control" %>
+                <%= f.label :學期 %><br>
+                <%= f.select 'semester', options_for_select(["102-1", "102-2", "103-1", "103-2", "104-1", "104-2", "105-1", "105-2"], select: "105-1"), {}, :class => 'form-control' %>
             </div>
+
+
 
 
           <br />
             <div class="col-md-3">
           <%= f.label :類別 %><br>
-          <%= f.text_field :category, autofocus: true, type: "text", class: "form-control" %>
+          <%= f.select 'category', options_for_select(["通識-文學藝術", "通識-史哲學科", "通識-自然學科", "通識-社會科學", "資管系", "財金系", "行管系", "觀光系", "經濟系", "企管系",  "社心系", "英文系",  "中文系",  "日文系",  "法律系", "新聞系", "口傳系", "公廣系", "資傳系", "圖傳系", "廣電系", "數媒系", "傳管系"], "傳管系"), {}, :class => 'form-control' %>
             </div>
 
           <br />
@@ -45,6 +47,8 @@
             </div>
           </div>
 
+          <br />
+          <hr>
           <br />
 
           <div class="row">
@@ -62,10 +66,14 @@
           </div>
 
           <br />
+          <hr>
+          <br />
 
           <%= f.label :作業考試 %><br>
           <%= f.text_area :exam, autofocus: true, class: "form-control" %>
 
+          <br />
+          <hr>
           <br />
 
           <%= f.label :幾顆星 %><br>
@@ -76,3 +84,4 @@
           <%= f.submit '送出', class: "btn btn-lg btn-primary btn-block" %>
           <% end %>
         </form>
+      </div>

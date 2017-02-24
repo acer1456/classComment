@@ -20,7 +20,7 @@
         <th>老師</th>
         <!-- <th>心得</th> -->
         <th>評價</th>
-        <th>發表於</th>
+        <!-- <th>發表於</th> -->
         <th></th>
       </tr>
     </thead>
@@ -32,8 +32,12 @@
         <td><%= course.category %></td>
         <td><%= course.teacher %></td>
         <!-- <td><%= course.comment %></td> -->
-        <td><%= course.vote %></td>
-        <td><%= time_ago_in_words(course.created_at) %></td>
+        <td>
+          <div class="row lead">
+            <div id="stars-existing" class="starrr" style="color: #FDD835" data-rating='<%= course.vote %>' readonly></div>
+          </div>
+        </td>
+        <!-- <td><%= time_ago_in_words(course.created_at) %></td> -->
         <td><%= link_to "詳細", course, class: "btn btn-sm btn-info" %></td>
       </tr>
         <% end %>
