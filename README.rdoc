@@ -1,17 +1,20 @@
 == 說明文件
 
-這是一個線上課程心得分享平台，能夠很簡單地讓同學們值估店分享對於課程的觀感！
+這是一個線上課程心得分享平台，能夠很簡單地讓同學們分享對於課程的觀感與心得！
 
 == 功能
 
 * 課程（新增、刪除、修改）
-* FB 登入（製作中）
+* FB 登入
+* 後台製作 (製作中)
 * 檢舉課程 (製作中)
 
 == 使用的 Function
 
 * Bootstrap 4 aplha
-* Devise FB Login
+* Devise
+* Ｏmniauth-facebook
+* settingslogic 管理key
 
 == 使用此專案方法
 
@@ -24,7 +27,17 @@
 進行 migrate 建立資料庫：
 <tt>$ rake db:migrate</tt>
 
+修改 config/application.yml 檔案：
+  <tt><br>
+  app_name: "輸入你的APP名稱"<br>
+  facebook_app_id: "輸入你的key"<br>
+  facebook_secret: "輸入你的key"<br>
+  domain: "輸入你的domain"<br>
+  </tt>
+
 打開伺服器即可開始測試使用：
 <tt>$ rails s</tt>
 
 == 感謝
+
+@Kevin 共同製作

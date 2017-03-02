@@ -1,0 +1,14 @@
+defaults: &defaults
+  app_name: "選課世新 SHU Course"
+  facebook_app_id: "1885976688313335"
+  facebook_secret: "67e66acf9ba7f167e908c5d8fe94c7d9"
+
+development:
+  <<: *defaults
+  domain: "http:/localhost:3000" #最後 "/" 要拿掉
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

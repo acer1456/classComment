@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "devise"
 gem 'cowsay'
+gem 'omniauth-facebook'
+gem 'settingslogic' #管理我們的秘密key
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
