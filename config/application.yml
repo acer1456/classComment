@@ -5,7 +5,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  domain: "http:/localhost:3000" #最後 "/" 要拿掉
+  domain: "https://shucourse.herokuapp.com" #最後 "/" 要拿掉
 
 test:
   <<: *defaults
