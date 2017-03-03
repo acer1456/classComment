@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClassComment</title>
+  <title>選課世新 SHU Course</title>
 
   <meta charset="utf-8">
+  <meta name="og:title" content="選課世新 SHU Course">
+  <meta name="og:description" content="這是一個線上課程心得分享平台，能夠很簡單地讓同學們分享對於課程的觀感與心得！">
+  <meta name="og:type" content="website">
+  <meta name="og:image" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/zh/thumb/c/c8/Shih_Hsin_University_logo.svg/1170px-Shih_Hsin_University_logo.svg.png">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -61,6 +68,8 @@
 
 <div class="container" style="padding-top:30px">
 <%= yield %>
+<div class="modal" style="display:none;">
+</div>
 </div>
 
 <!-- <footer class="blog-footer">
@@ -190,6 +199,10 @@ $('#stars-existing').on('starrr:change', function(e, value){
   $('#count-existing').html(value);
 });
 });
+
+// $('#myModal').on('shown.bs.modal', function () {
+//   $('#myInput').focus()
+// })
 </script>
 
 </body>

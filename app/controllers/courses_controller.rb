@@ -15,6 +15,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+
   end
 
   # GET /courses/new
@@ -30,6 +31,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
+    @course.ip_create  = current_user.current_sign_in_ip
 
     respond_to do |format|
       if @course.save
@@ -45,6 +47,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    @course.ip_update  = current_user.last_sign_in_ip
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: '已成功修改課程評價。' }
