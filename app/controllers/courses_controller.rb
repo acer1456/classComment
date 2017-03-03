@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    @course = current_user.courses.build(course_params)
 
     respond_to do |format|
       if @course.save
@@ -56,10 +56,10 @@ class CoursesController < ApplicationController
   # DELETE /courses/1.json
   def destroy
     @course.destroy
-    respond_to do |format|
-      format.html { redirect_to courses_url, notice: '已成功刪除課程評價。' }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        format.html { redirect_to courses_url, notice: '已成功刪除課程評價。' }
+        format.json { head :no_content }
+      end
   end
 
   private
