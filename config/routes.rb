@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :problems, path: "/admin/problems"
+  resources :problems, except: [:index, :create, :edit, :update, :destroy]
+
 
   get 'users/:id/problems' => 'users#problems', :as => :user_problems
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

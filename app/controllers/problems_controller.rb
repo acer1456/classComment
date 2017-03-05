@@ -3,6 +3,7 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!
 
 
+
   # GET /problems
   # GET /problems.json
   def index
