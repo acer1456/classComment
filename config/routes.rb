@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   get 'pages/info'
 
+  resources :courses
+  resources :problems, path: "/admin/problems"
+
+  get 'users/:id/problems' => 'users#problems', :as => :user_problems
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :courses
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
