@@ -1,7 +1,7 @@
 <div class="row">
 
 
-<div class="col-md-3">
+<div class="col-md-2">
     <div class="alert alert-success" role="alert">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "搜尋課程",  class: "form-control"%>
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="col-md-9">
+<div class="col-md-10">
   <table class="table table-sm table-hover">
     <thead>
       <tr>
@@ -19,7 +19,7 @@
         <th>類別</th>
         <th>老師</th>
         <!-- <th>心得</th> -->
-        <th>評價</th>
+        <th>整體評價</th>
         <!-- <th>發表於</th> -->
         <th></th>
       </tr>
@@ -32,13 +32,14 @@
         <td><%= course.category %></td>
         <td><%= course.teacher %></td>
         <!-- <td><%= course.comment %></td> -->
-        <td>
-          <div class="row lead">
-            <div id="stars-existing" class="starrr" style="color: #FDD835" data-rating='<%= course.vote %>' readonly></div>
-          </div>
-        </td>
+        <!-- <td><i class="fa fa-times fa-lg" style="color: black"></i> </td>
+        <td><i class="fa fa-check fa-lg" style="color: green"></i> </td> -->
+
+        <!-- <td><%= course.vote %>.0 <i class="fa fa-star fa-lg" style="color: #FDD835"></i> </td> -->
+        <td><% course.vote.times do %><i class="fa fa-star" style="color: #FDD835"></i><% end %></td>
         <!-- <td><%= time_ago_in_words(course.created_at) %></td> -->
         <td><%= link_to "詳細", course, class: "btn btn-sm btn-info" %></td>
+
       </tr>
         <% end %>
     </tbody>

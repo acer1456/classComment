@@ -19,7 +19,7 @@
     <br>
   <h6><strong>考試方式:</strong></h6><p><span><%= @course.exam.gsub(/\n/, '<br>').html_safe %></span></p>
     <hr>
-  <p><strong>課程評價:</strong><span> <%=@course.vote %></span></p>
+  <p><strong>課程評價:</strong><br><% @course.vote.times do %><i class="fa fa-star fa-3x" style="color: #FDD835"></i><% end %></p>
 
   <% if user_signed_in? %>
   <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %> |
