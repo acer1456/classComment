@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170303210706) do
     t.string   "semester"
     t.text     "detail"
     t.text     "exam"
-    t.integer  "user_id"
     t.string   "ip_create"
     t.string   "ip_update"
   end
