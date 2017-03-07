@@ -18,6 +18,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+
+
   <style media="screen">
 
     html {
@@ -44,8 +46,8 @@
      }
 
      .footer > .container {
-       padding-right: 15px;
-       padding-left: 15px;
+       /*padding-right: 15px;*/
+       /*padding-left: 15px;*/
      }
 
   </style>
@@ -74,8 +76,9 @@
          <img src="<%= current_user.image %>" alt="facebook_profile_photo" height="40px">&emsp; -->
          <li><%= link_to "登出", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
          <li><%= link_to '關於', pages_info_url, class: 'nav-link' %></li>
-        <li><a href="https://www.messenger.com/t/484942598560539" class="nav-link">回報問題</a></li>&emsp;
+        <li><a href="https://www.messenger.com/t/484942598560539" class="nav-link"  target="_blank">回報問題</a></li>&emsp;
         <li><%= link_to '發表心得', new_course_path, class: 'nav-link', class: "btn btn-outline-info" %></li>
+            </li>
       <% end %>
     </ul>
   </div>
@@ -96,7 +99,7 @@
       <div class="container">
         <span class="text-muted"> &copy; 選課世新 SHU Course 2017</span>
       </div>
-    </footer>
+</footer>
 
 <!-- <footer class="blog-footer">
   <span class="text-muted">&#9400; Wei & Kevin 製作</span>
