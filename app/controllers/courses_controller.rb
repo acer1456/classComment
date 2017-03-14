@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show]
   before_filter :authenticate_user!, except: [:show, :index]
 
   # GET /courses
@@ -18,13 +18,12 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-end
+    end
   end
 
   # GET /courses/new
   def new
     @course = Course.new
-
   end
 
   # GET /courses/1/edit

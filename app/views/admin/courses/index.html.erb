@@ -1,0 +1,52 @@
+<div class="row">
+
+
+<div class="col-md-2 well">
+    <div class="alert" role="alert" style="background-color: #DADADA">
+<%= form_tag(admin_courses_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "搜尋課程",  class: "form-control"%>
+<%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
+<% end %>
+    </div>
+</div>
+
+<div class="col-md-10">
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>課程</th>
+        <th>學期</th>
+        <th>類別</th>
+        <th>老師</th>
+        <th>整體評價</th>
+        <th>發表於</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= course.semester %></td>
+          <td><%= course.category %></td>
+          <td><%= course.teacher %></td>
+          <td><% course.vote.times do %><i class="fa fa-star" style="color: #FDD835"></i><% end %></td>
+          <td><%= time_ago_in_words(course.created_at) %></td>
+          <td><%= link_to "詳細", admin_course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, class:"btn btn-sm btn-info" %>
+          <%= link_to "編輯", edit_admin_course_path(course), :remote => true, data: {toggle: "modal", target: "#editModal"}, class:"btn btn-sm btn-success" %>
+          <%= link_to "刪除", admin_course_path(course), method: :delete, class:"btn btn-sm btn-danger", data: {confirm: "Are you sure?"}  %></td>
+        </tr>
+          <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>   <!-- row -->
+
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+</div>
+<div class="modal" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"  aria-hidden="true">
+</div>
