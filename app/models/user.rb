@@ -11,7 +11,11 @@ class User < ActiveRecord::Base
            Rails.logger.info "========="  #這是如果有錯的話可以用來檢查
            where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 
-               user.email = auth.info.email
+              if auth.info.email = ""
+                user.email = auth.uid + "@" + auth.provider + ".com"
+              else
+                user.email = auth.info.email
+              end
 
                user.password = Devise.friendly_token[0,20]
                user.name = auth.info.name
