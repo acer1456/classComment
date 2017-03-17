@@ -21,8 +21,4 @@
     <hr>
   <p><strong>課程評價:</strong><br><% @course.vote.times do %><i class="fa fa-star fa-3x" style="color: #FDD835"></i><% end %></p>
 
-  <% if user_signed_in? %>
-  <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %> |
-  <%= link_to 'Destroy', @course, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %> |
-  <% end %>
   <%= link_to 'Back', courses_path, class: "btn btn-info" %>

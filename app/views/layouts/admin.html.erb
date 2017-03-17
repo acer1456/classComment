@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 
@@ -68,6 +67,7 @@
       <!-- <li><a class="nav-link" href="#">學分輕鬆拿</a></li> -->
     </ul>
     <ul class="navbar-nav navbar-right">
+
       <% if current_user.try(:admin?) %>
       <li><%= link_to "使用者管理", admin_users_path, class: "btn btn-outline-info" %></li>&emsp;
       <li><%= link_to "課程管理", admin_courses_path, class: "btn btn-outline-info" %></li>&emsp;
@@ -100,6 +100,14 @@
     <a href="#">Back to top</a>
   </p>
 </footer> -->
+
+<script id="_wau553">var _wau = _wau || [];
+_wau.push(["tab", "e9ip0v5hww7m", "553", "left-lower"]);
+(function() {var s=document.createElement("script"); s.async=true;
+s.src="//widgets.amung.us/tab.js";
+document.getElementsByTagName("head")[0].appendChild(s);
+})();</script>
+
 
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
