@@ -1,7 +1,32 @@
-<div class="row">
+<style media="screen">
+// Box shadow helper
+@mixin BoxShadowHelper($level: 1){
+@if $level == 1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+@if $level == 2 {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+}
+a {transition: .25s all;}
+.card {
+overflow: hidden;
+@include BoxShadowHelper(1);
+transition: .25s box-shadow;
+&:focus,
+&:hover {@include BoxShadowHelper(2);}
+}
+.card-inverse .card-img-overlay {
+background-color: rgba(#333,.85);
+border-color: rgba(#333,.85);
+}
+</style>
 
 
-<div class="col-md-3">
+<div class="row box">
+
+
+<div class="col-xs-12 col-sm-12 col-md-12">
     <div class="alert" role="alert" style="background-color: #DADADA">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "搜尋課程",  class: "form-control"%>
@@ -10,51 +35,52 @@
     </div>
 </div>
 
-<div class="col-md-9 responsive">
-  <table class="table table-sm table-hover" >
-    <thead >
-      <tr>
+
+  <% @courses.each do |course| %>
+    <div class='item col-xs-12 col-sm-6 col-md-2'>
+            <article class="card animated fadeInLeft" style="color:#fff">
+              <div class="card-block" style="background-color:#546E7A">
+                <p class="card-title" style="font-size:18px">課程：<%= course.name %></p>
+                <p class="text" style="font-size:14px; color:#DADADA">老師：<%= course.teacher %></p>
+                  <div style="float:right" style="font-size:12px;">
+                    <%= course.semester %>
+                  </div>
+                <p class="text"><%= course.category %></p>
+                <% course.vote.times do %><i class="fa fa-star" style="color: #FDD835"></i><% end %>
+                  <div style="float:right">
+                    <%= link_to "詳細", course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, class:"btn btn-sm btn-info" %>
+                </div>
+              </div>
+            </article><!-- .end Card -->
+    </div>
+  <% end %>
+
+<!-- <div class="col-md-9">
+  <table class="table table-sm table-hover" nowrap>
+    <thead nowrap>
+      <tr nowrap>
         <th>課程</th>
         <th>學期</th>
         <th>類別</th>
         <th>老師</th>
-        <!-- <th>心得</th> -->
         <th>整體評價</th>
-        <!-- <th>發表於</th> -->
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody nowrap>
       <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
         <td><%= course.semester %></td>
         <td><%= course.category %></td>
         <td><%= course.teacher %></td>
-        <!-- <td><%= course.comment %></td> -->
-        <!-- <td><i class="fa fa-times fa-lg" style="color: black"></i> </td>
-        <td><i class="fa fa-check fa-lg" style="color: green"></i> </td> -->
-
-        <!-- <td><%= course.vote %>.0 <i class="fa fa-star fa-lg" style="color: #FDD835"></i> </td> -->
         <td><% course.vote.times do %><i class="fa fa-star" style="color: #FDD835"></i><% end %></td>
-        <!-- <td><%= time_ago_in_words(course.created_at) %></td> -->
-        <!-- <td><%= link_to "詳細", course, class: "btn btn-sm btn-info" %></td> -->
-
         <td><%= link_to "詳細", course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, class:"btn btn-sm btn-info" %></td>
 
       </tr>
         <% end %>
     </tbody>
   </table>
-</div>
-<!-- <div class="col-md-6">
-  <% @courses.each do |course| %>
-    <p>
-      <h3><%= link_to course.name ,course %></h3>
-      <%= course.teacher %></p>
-      <p align="right">發表於 <%= time_ago_in_words(course.created_at) %> 前</p>
-      <hr>
-  <% end %>
 </div> -->
 
 
