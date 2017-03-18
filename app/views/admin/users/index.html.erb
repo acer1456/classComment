@@ -1,6 +1,5 @@
 <div class="row">
 
-
 <div class="col-md-2 well">
     <div class="alert" role="alert" style="background-color: #DADADA">
 <%= form_tag(admin_users_path, :method => "get", id: "search-form") do %>
@@ -11,7 +10,7 @@
 </div>
 
 <div class="col-md-10">
-  <table id="myTable" class="table table-sm table-responsive table-hover">
+  <table id="myTable" class="table table-sm table-hover dt-responsive" cellspacing="0" width="100%">
     <thead>
       <tr>
           <th>姓名</th>
@@ -23,24 +22,30 @@
           <th>註冊於</th>
           <th>管理員</th>
           <th></th>
-          <th></th>
-          <th></th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
-          <td> <img src="<%= user.image %>" width="50px" height="50px"> </td>
+          <td> <img src="<%= user.image %>" width="40px" height="40px"> </td>
           <td><%= user.email %></td>
-          <td><%= user.last_sign_in_at %></td>
+          <td><%= user.last_sign_in_at.to_s(:long_ordinal) %></td>
           <td><%= user.sign_in_count %></td>
           <td><%= user.last_sign_in_ip %></td>
-          <td><%= user.created_at %></td>
-          <td><%= user.admin %></td>
-          <td><%= link_to "詳細", admin_user_path(user), :remote => true, data: {toggle: "modal", target: "#userModal"}, class:"btn btn-sm btn-info" %></td>
-          <td><%= link_to "編輯", edit_admin_user_path(user), data: {toggle: "modal", target: "#userEditModal"}, class:"btn btn-sm btn-success", :remote => true %></td>
-          <td><%= link_to "刪除", admin_user_path(user), method: :delete, class:"btn btn-sm btn-danger", data: {confirm: "Are you sure?"}  %></td>
+          <td><%= user.created_at.to_s(:long_ordinal) %></td>
+
+          <td>
+            <% if user.admin == true %>
+              <b style="color:green">YES</b>
+            <% else %>
+              <span style="color:red">NO</span>
+            <% end %>
+          </td>
+
+          <td><%= link_to "詳細", admin_user_path(user), :remote => true, data: {toggle: "modal", target: "#userModal"}, class:"btn btn-sm btn-info" %>
+          <%= link_to "編輯", edit_admin_user_path(user), data: {toggle: "modal", target: "#userEditModal"}, class:"btn btn-sm btn-success", :remote => true %>
+          <%= link_to "刪除", admin_user_path(user), method: :delete, class:"btn btn-sm btn-danger", data: {confirm: "Are you sure?"}  %></td>
         </tr>
           <% end %>
     </tbody>

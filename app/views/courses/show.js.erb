@@ -1,1 +1,5 @@
 $('#myModal').html("<%= escape_javascript(render :partial => 'event') %>");
+
+$('#myModal').on('hidden.bs.modal', function () {
+   $('#myModal .modal-content').empty();
+ });

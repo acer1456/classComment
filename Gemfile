@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'thin'
+gem 'awesome_rails_console'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -29,6 +30,7 @@ gem 'cowsay'
 gem 'omniauth-facebook'
 gem 'settingslogic' #管理我們的秘密key
 gem 'therubyracer'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

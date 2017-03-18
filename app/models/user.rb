@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
               if auth.info.email.present?
                 user.email = auth.info.email
               else
-                user.email = auth.uid + "@" + auth.provider + ".com"
+                user.email = auth.uid + "@" + "fb.com"
               end
 
                user.password = Devise.friendly_token[0,20]

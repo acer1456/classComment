@@ -1,1 +1,5 @@
 $('#userModal').html("<%= escape_javascript(render :partial => 'showUser') %>");
+
+$('#userModal').on('hidden.bs.modal', function () {
+   $('#userModal .modal-content').empty();
+ });
