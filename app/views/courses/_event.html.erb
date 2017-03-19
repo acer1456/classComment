@@ -1,6 +1,12 @@
 <style media="screen">
+  b, strong{
+    font-size: 15px;
+  }
   span{
-    color: #575757;
+    color: #EEEEEE;
+  }
+  .span2{
+    color: #000;
   }
 </style>
 
@@ -9,29 +15,37 @@
 <!-- Modal -->
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= @course.name %></h5>
+      <div class="modal-header" style="background-color:#34495E; color:#fff">
+        <h5 class="modal-title" id="exampleModalLabel" ><%= @course.name %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
 
-        <p><b>學期:</b><span><%= @course.semester %></span></p>
-        <p><b>類別:</b><span><%= @course.category %></span></p>
-        <p><b>授課老師:</b><span><%= @course.teacher %></span></p>
-          <hr>
+      <div class="modal-body" >
+        <p><b>學期: </b><span class="span2"> <%= @course.semester %></span></p>
+        <p><b>類別: </b><span class="span2"> <%= @course.category %></span></p>
+        <p><b>老師: </b><span class="span2"> <%= @course.teacher %></span></p>
+      </div>
+
+      <div class="modal-body" style="background-color:#607D8B; color:#fff">
         <h6><strong>修課心得:</strong></h6><p><span><%= @course.comment.gsub(/\n/, '<br>').html_safe %></span></p>
-          <br>
-        <h6><strong>上課內容:</strong></h6><p><span><%= @course.detail.gsub(/\n/, '<br>').html_safe %></span></p>
-          <br>
-        <h6><strong>考試方式:</strong></h6><p><span><%= @course.exam.gsub(/\n/, '<br>').html_safe %></span></p>
-          <hr>
-        <p><strong>課程評價:</strong><br><% @course.vote.times do %><i class="fa fa-star fa-3x" style="color: #FDD835"></i><% end %></p>
       </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+      <div class="modal-body" >
+        <h6><strong>上課內容:</strong></h6><p><span class="span2"><%= @course.detail.gsub(/\n/, '<br>').html_safe %></span></p>
       </div>
+
+      <div class="modal-body" style="background-color:#607D8B; color:#fff">
+        <h6><strong>考試方式:</strong></h6><p><span><%= @course.exam.gsub(/\n/, '<br>').html_safe %></span></p>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>課程評價: </strong><br><% @course.vote.times do %><i class="fa fa-star fa-3x" style="color: #FDD835"></i><% end %></p>
+      </div>
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+      </div> -->
     </div>
   </div>
