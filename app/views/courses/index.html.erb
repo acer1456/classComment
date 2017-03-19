@@ -8,17 +8,17 @@ position: fixed;
 top: 55px;
 left: 0;
 z-index: 1000;
-padding: 20px;
+padding: 10px;
 background-color: #fff;
-/*overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */*/
+overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */*/
 }
 </style>
 
-<div class="forDevise row">
+<div class="forDevise row" >
 
 
-<div class="col-sm-2 col-md-2 bg-faded sidebar">
-  <div class="alert" style="padding:5px">
+<div class="col-sm-2 col-md-2 sidebar" >
+  <div class="alert" style="padding:20px">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%>
 <%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
@@ -55,5 +55,5 @@ background-color: #fff;
 
 </div>   <!-- row -->
 
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-focus="true">
 </div>
