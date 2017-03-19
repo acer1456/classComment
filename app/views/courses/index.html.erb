@@ -14,10 +14,13 @@ overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 </style>
 
+
+
+
 <div class="forDevise row" >
 
 
-<div class="col-sm-2 col-md-2 sidebar" >
+<div class="col-sm-3 col-md-3 sidebar" >
   <div class="alert" style="padding:20px">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%>
@@ -26,13 +29,13 @@ overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   </div>
 </div>
 
-<div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+<div class="col-sm-9 offset-sm-5 col-md-9 offset-md-3 pt-3">
   <table class="table table-sm table-hover">
     <thead>
       <tr>
         <th>課程</th>
-        <!-- <th>學期</th> -->
-        <th>類別</th>
+        <th id="hid">學期</th>
+        <th id="hid">類別</th>
         <th>老師</th>
         <th>整體評價</th>
         <th></th>
@@ -42,7 +45,8 @@ overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
       <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.name, course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"} %></td>
-        <td><%= course.category %></td>
+        <td id="hid"><%= course.semester %></td>
+        <td id="hid"><%= course.category %></td>
         <td><%= course.teacher %></td>
         <td><% course.vote.times do %><i class="fa fa-star" style="color: #FDD835"></i><% end %></td>
         <!-- <td><%= link_to "詳細", course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, class:"btn btn-sm btn-info" %></td> -->
