@@ -53,6 +53,14 @@
        padding-right: 15px;
        padding-left: 15px;
      }
+     @media (max-width: 575px) {
+
+       .forDevise{
+          margin-top: 120px;
+        }
+
+      }
+
 
   </style>
 
@@ -95,15 +103,15 @@
   <p class="alert alert-danger" align="center"><%= alert %></p>
 <% end %>
 
-<div style="padding:30px">
+<div class="forDevise" style="padding:30px">
 <%= yield %>
 </div>
 
-<footer class="footer">
+<!-- <footer class="footer">
       <div class="container">
         <span class="text-muted"> &copy; 選課世新 SHU Course 2017</span>
       </div>
-</footer>
+</footer> -->
 
 <!-- <footer class="blog-footer">
   <span class="text-muted">&#9400; Wei & Kevin 製作</span>
@@ -111,12 +119,6 @@
     <a href="#">Back to top</a>
   </p>
 </footer> -->
-
-<script>
-$('.box').masonry({
-    itemSelector: 'item',
-});
-</script>
 
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
