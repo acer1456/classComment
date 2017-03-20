@@ -17,6 +17,21 @@ class Admin::CoursesController < AdminController
      end
    end
 
+   def edit
+   end
+
+   def update
+     respond_to do |format|
+      if @course.update(admin_course_params)
+        format.html { redirect_to(admin_courses_path, :notice => 'Category was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
+      end
+    end
+   end
+
    def destroy
     @course.destroy
     respond_to do |format|

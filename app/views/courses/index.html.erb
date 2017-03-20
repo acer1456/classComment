@@ -1,35 +1,27 @@
-<style media="screen">
-/*
-* Sidebar
-*/
 
-.sidebar {
-position: fixed;
-top: 55px;
-left: 0;
-z-index: 1000;
-padding: 10px;
-background-color: #fff;
-overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */*/
-}
-</style>
+<div class="row" >
 
 
-
-
-<div class="forDevise row" >
-
-
-<div class="col-sm-3 col-md-3 sidebar" >
+<div class="col-sm-3 col-md-3">
   <div class="alert" style="padding:20px">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%>
 <%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
 <% end %>
+  <br>
+  <div class="">
+  <a href="?utf8=✓&search=通識&commit=搜尋" class="btn btn-sm btn-success">通識</a>
+  <a href="?utf8=✓&search=體育&commit=搜尋" class="btn btn-sm btn-success">體育</a>
+  <a href="?utf8=✓&search=通識-社科&commit=搜尋" class="btn btn-sm btn-success">通識-社科</a>
+  <a href="?utf8=✓&search=通識-自然&commit=搜尋" class="btn btn-sm btn-success">通識-自然</a>
+  </div>
+  <br>
+  <a href="?utf8=✓&search=通識-文藝&commit=搜尋" class="btn btn-sm btn-success">通識-文藝</a>
   </div>
 </div>
 
-<div class="col-sm-9 offset-sm-5 col-md-9 offset-md-3 pt-3">
+
+<div class="col-sm-9 col-md-9">
   <table class="table table-sm table-hover">
     <thead>
       <tr>

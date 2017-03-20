@@ -7,6 +7,8 @@
 <%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
 <% end %>
     </div>
+    <p>使用者人數：<%= @users.length.to_s %></p>
+
 </div>
 
 <div class="col-md-10">
@@ -44,7 +46,9 @@
           </td>
 
           <td><%= link_to "詳細", admin_user_path(user), :remote => true, data: {toggle: "modal", target: "#userModal"}, class:"btn btn-sm btn-info" %>
-          <%= link_to "編輯", edit_admin_user_path(user), data: {toggle: "modal", target: "#userEditModal"}, class:"btn btn-sm btn-success", :remote => true %>
+
+          <%= link_to "編輯", edit_admin_user_path(user), :remote => true, data: {toggle: "modal", target: '#myUpdateUser'}, class:"btn btn-sm btn-success" %>
+
           <%= link_to "刪除", admin_user_path(user), method: :delete, class:"btn btn-sm btn-danger", data: {confirm: "Are you sure?"}  %></td>
         </tr>
           <% end %>
@@ -58,4 +62,9 @@
 
 
 <div class="modal" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true" data-no-turbolink>
+</div>
+
+
+
+<div class="modal" id="myUpdateUser" tabindex="-2" role="dialog" aria-labelledby="updateUserModalLabel"  aria-hidden="true" data-no-turbolink>
 </div>

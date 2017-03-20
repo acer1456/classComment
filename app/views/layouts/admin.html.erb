@@ -26,36 +26,15 @@
 
   <style media="screen">
 
-    html {
+    /*html {
       position: relative;
-    }
+    }*/
 
     body{
       font-family: "Noto Sans TC", sans-serif;
       font-weight: 100;
       margin-bottom: 100px;
     }
-    container{
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-     .footer {
-       position: fixed;
-       bottom: 0;
-       width: 100%;
-       height: 60px;
-       line-height: 60px;
-       background-color: #DADADA;
-     }
-
-     body > .container {
-       padding: 60px 0 0;
-     }
-
-     .footer > .container {
-       padding-right: 15px;
-       padding-left: 15px;
-     }
 
   </style>
 
@@ -63,11 +42,13 @@
 <body>
 
   <nav class="navbar navbar-toggleable-md sticky-top navbar-light bg-faded navbar-inverse" style="background-color: #000;">
+  <div class="navbar-header">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <%= link_to '後台系統', admin_users_path, class: 'navbar-brand' %>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <!-- <li><a class="nav-link" href="#">學分輕鬆拿</a></li> -->
     </ul>
@@ -93,11 +74,11 @@
 <%= yield %>
 </div>
 
-<footer class="footer">
+<!-- <footer class="footer">
       <div class="container">
         <span class="text-muted"> &copy; 選課世新 SHU Course 2017</span>
       </div>
-</footer>
+</footer> -->
 
 <!-- <footer class="blog-footer">
   <span class="text-muted">&#9400; Wei & Kevin 製作</span>
