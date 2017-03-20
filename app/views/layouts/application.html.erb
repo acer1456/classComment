@@ -1,75 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>選課世新 SHU Course</title>
+  <title>選課世新 SHU Course (Beta 1.0)</title>
 
   <meta charset="utf-8">
-  <meta name="og:title" content="選課世新 SHU Course">
+  <meta name="og:title" content="選課世新 SHU Course (Beta 1.0)">
   <meta name="og:description" content="這是一個線上課程心得分享平台，能夠很簡單地讓同學們分享對於課程的觀感與心得！">
   <meta name="og:type" content="website">
-  <meta name="og:image" content="">
+  <meta name="og:image" content="public/link.png">
+  <meta property="og:url" content="https://shucourse.herokuapp.com"/>
+  <meta property="og:site_name" content="選課世新 SHU Course (Beta 1.0)" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/zh/thumb/c/c8/Shih_Hsin_University_logo.svg/1170px-Shih_Hsin_University_logo.svg.png">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+  <link rel="icon" src="public/favicon.ico">
+  <link rel="apple-touch-icon" src="public/favicon.ico">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
-
-
-  <style media="screen">
-
-    html {
-      position: relative;
-    }
-
-    body{
-      font-family: "Noto Sans TC", sans-serif;
-      font-weight: 300;
-      margin-bottom: 100px;
-    }
-    .modal-open {
-      position:fixed;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-    /*container{
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-     .footer {
-       position: fixed;
-       bottom: 0;
-       width: 100%;
-       height: 30px;
-       line-height: 29px;
-       background-color: #DADADA;
-     }
-
-     body > .container {
-       padding: 60px 0 0;
-     }
-
-     .footer > .container {
-       padding-right: 15px;
-       padding-left: 15px;
-     }*/
-     @media (max-width: 575px) {
-
-          #hid{
-            display:none;
-          }
-      }
-  </style>
 
 </head>
 <body>
@@ -80,10 +29,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <%= link_to '選課世新 SHU Course', root_path, class: 'navbar-brand' %>
-
 </div>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <a class="nav-item nav-link disabled" href="#">Beta 1.0</a>
       <% if current_user.try(:admin?) %>
         <%= link_to "後台", admin_users_path, class: "nav-link" %>
       <% end %>
@@ -114,25 +63,14 @@
 <%= yield %>
 </div>
 
+	<a href="#0" class="cd-top">Top</a>
+
+
 <!-- <footer class="footer">
       <div class="container">
         <span class="text-muted"> &copy; 選課世新 SHU Course 2017</span>
       </div>
 </footer> -->
-
-<!-- <footer class="blog-footer">
-  <span class="text-muted">&#9400; Wei & Kevin 製作</span>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer> -->
-
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-
 
 </body>
 </html>

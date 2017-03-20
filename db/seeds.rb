@@ -27,7 +27,7 @@
 
     Course.create(:name => name, :teacher => teacher, :vote => vote, :category => category, :semester => semester, :comment => comment, :detail => detail, :exam => exam)
 
-    # Course.destrou_all
+    # Course.destroy_all
 
 
 end

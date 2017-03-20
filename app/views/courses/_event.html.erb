@@ -3,7 +3,7 @@
     font-size: 15px;
   }
   span{
-    color: #EEEEEE;
+    color: #000;
   }
   .span2{
     color: #000;
@@ -28,16 +28,16 @@
         <p><b>老師: </b><span class="span2"> <%= @course.teacher %></span></p>
       </div>
 
-      <div class="modal-body" style="background-color:#455A64; color:#fff">
-        <h6><strong>修課心得:</strong></h6><p><span><%= @course.comment.gsub(/\n/, '<br>').html_safe %></span></p>
+      <div class="modal-body" style="background-color:#EEEEEE; color:#fff">
+        <h6 style="color: #000;"><strong>修課心得:</strong></h6><p><span><%= @course.comment.gsub(/\n/, '<br>').html_safe %></span></p>
       </div>
 
       <div class="modal-body" >
         <h6><strong>上課內容:</strong></h6><p><span class="span2"><%= @course.detail.gsub(/\n/, '<br>').html_safe %></span></p>
       </div>
 
-      <div class="modal-body" style="background-color:#455A64; color:#fff">
-        <h6><strong>考試方式:</strong></h6><p><span><%= @course.exam.gsub(/\n/, '<br>').html_safe %></span></p>
+      <div class="modal-body" style="background-color:#EEEEEE; color:#fff">
+        <h6><strong style="color: #000;">考試方式:</strong></h6><p><span><%= @course.exam.gsub(/\n/, '<br>').html_safe %></span></p>
       </div>
 
       <div class="modal-body">

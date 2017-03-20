@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-3.1.1.slim.min
+//= require bootstrap.min
+//= require tether.min
+//= require backtotop
 //= require_tree .
