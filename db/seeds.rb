@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-20.times do
+300.times do
     name = "食品營養與健康"
     teacher = "郭素娥"
     vote = 3
@@ -17,7 +17,7 @@
 你覺得你在這堂課付出多少：8/10
 你覺得你在這堂課收穫多少：8/10
 你覺得你在這堂課付出與收穫的關係如何：undefined"
-    detail = "無"
+    detail = "無awdawdawdawdawdawdawdawdawdawdawdawdad"
     exam = "期中考試都考PPT內容及上課特別提醒的重點，並不難作業方式：
 期末書面報告內容包括口頭報告的延伸整理(3頁)及2位同學報告的內容補充(2頁)，不得超過5頁word報告方式：
 4-5位，報告內容為餐盒評析，針對三個便當餐盒評析其營養價值及優缺點，報告時間為5分鐘。
