@@ -15,18 +15,17 @@
 <div class="col-sm-3 col-md-3">
   <div class="alert" style="padding:20px">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%>
+<p><%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%></p>
 <%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
 <% end %>
-  <br>
-  <div class="">
+  <!-- <div class="">
   <a href="?utf8=✓&search=通識&commit=搜尋" class="btn btn-sm btn-success">通識</a>
   <a href="?utf8=✓&search=體育&commit=搜尋" class="btn btn-sm btn-success">體育</a>
   <a href="?utf8=✓&search=通識-社科&commit=搜尋" class="btn btn-sm btn-success">通識-社科</a>
   <a href="?utf8=✓&search=通識-自然&commit=搜尋" class="btn btn-sm btn-success">通識-自然</a>
   </div>
   <br>
-  <a href="?utf8=✓&search=通識-文藝&commit=搜尋" class="btn btn-sm btn-success">通識-文藝</a>
+  <a href="?utf8=✓&search=通識-文藝&commit=搜尋" class="btn btn-sm btn-success">通識-文藝</a> -->
   </div>
 </div>
 
@@ -61,5 +60,5 @@
 
 </div>   <!-- row -->
 
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-focus="true">
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" focus="true">
 </div>
