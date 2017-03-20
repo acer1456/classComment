@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-300.times do
-    name = "食品營養與健康"
-    teacher = "郭素娥"
+50.times do
+    name = "資訊很養"
+    teacher = "王小明"
     vote = 3
     category = "通識-社會科學"
     semester = "103-2"
@@ -26,4 +26,8 @@
 
 
     Course.create(:name => name, :teacher => teacher, :vote => vote, :category => category, :semester => semester, :comment => comment, :detail => detail, :exam => exam)
+
+    # Course.destrou_all
+
+
 end
