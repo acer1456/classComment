@@ -29,11 +29,11 @@
             <div class="row">
                 <div class="col-6">
                   <p>學期</p>
-                  <div><%= f.select 'semester', options_for_select(["102-1", "102-2", "103-1", "103-2", "104-1", "104-2", "105-1", "105-2"], select: "105-1"), {}, :class => 'form-control' %></div>
+                  <div><%= f.select 'semester', options_for_select(["102-1", "102-2", "103-1", "103-2", "104-1", "104-2", "105-1", "105-2"], @course.semester), {}, :class => 'form-control' %></div>
                 </div>
                 <div class="col-6">
                   <p>類別</p>
-                  <div><%= f.select 'category', options_for_select(["通識-文藝", "通識-史哲", "通識-自然", "通識-社科" , "校際必修", "體育", "資管系", "財金系", "行管系", "觀光系", "經濟系", "企管系",  "社心系", "英文系",  "中文系",  "日文系",  "法律系", "新聞系", "口傳系", "公廣系", "資傳系", "圖傳系", "廣電系", "數媒系", "傳管系"], "傳管系"), {}, :class => 'form-control' %>
+                  <div><%= f.select 'category', options_for_select(["通識-文藝", "通識-史哲", "通識-自然", "通識-社科", "校際必修", "體育", "資管系", "財金系", "行管系", "觀光系", "經濟系", "企管系", "社心系", "英文系", "中文系", "日文系", "法律系", "新聞系", "口傳系", "公廣系", "資傳系", "圖傳系", "廣電系", "數媒系", "傳管系"], @course.category), {}, :class => 'form-control' %>
                   </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-5">
                   <p>打幾顆 <i class="fa fa-star" style="color: #FDD835"></i> ？</p>
-                  <div><%= f.select 'vote', options_for_select(["1", "2", "3", "4", "5"], select: "3"), {}, :class => 'form-control' %></div>
+                  <div><%= f.select 'vote', options_for_select(["1", "2", "3", "4", "5"], @course.vote), {}, :class => 'form-control' %></div>
                 </div>
             </div>
 
