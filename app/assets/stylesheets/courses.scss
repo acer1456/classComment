@@ -11,7 +11,18 @@
 	background:transparent;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
+    .search {
+        width: 95%;
+        border:none;
+        padding:0 5px;
+        font-size:1.2rem;
+        font-weight:100;
+        background:transparent;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     .search {
         width: 93%;
         border:none;
@@ -22,7 +33,7 @@
     }
   }
 
-@media only screen and (max-width: 767px) {
+  @media screen and (min-width: 400px) and (max-width: 767px) {
     .search {
         width: 87%;
         border:none;
@@ -33,9 +44,9 @@
     }
   }
 
-  @media only screen and (max-width: 360px) {
+  @media screen and (min-width: 330px) and (max-width: 399px) {
     .search {
-        width: 85%;
+        width: 84%;
         border:none;
         padding:0 5px;
         font-size:1.2rem;
