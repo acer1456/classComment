@@ -18,7 +18,6 @@
   <% end %>
 
 
-  <div style="padding:30px;">
 
         <form>
 
@@ -55,21 +54,23 @@
             <br />
 
                 <p>心得感想</p>
-                <div><%= f.text_area :comment, autofocus: true, class: "form-control", rows:"5", placeholder:"這堂課你有什麼感想？ 好玩嗎？ 學很多嗎？ 好過嗎？" %></div>
+                <div><%= f.text_area :comment, autofocus: true, class: "form-control", rows:"4", placeholder:"這堂課你有什麼感想？ 好玩嗎？ 學很多嗎？ 好過嗎？" %></div>
 
             <br />
 
                 <p>上課方式</p>
-                <div><%= f.text_area :detail, autofocus: true, class: "form-control", rows:"5", placeholder:"老師有沒有什麼固定的上課習慣跟規定呢？" %></div>
+                <div><%= f.text_area :detail, autofocus: true, class: "form-control", rows:"4", placeholder:"老師有沒有什麼固定的上課習慣跟規定呢？" %></div>
 
             <br />
 
                 <p>作業考試 / 算分方式</p>
-                <div><%= f.text_area :exam, autofocus: true, class: "form-control", rows:"5", placeholder:"有無作業 / 考試考多少次 / 如何算分" %></div>
+                <div><%= f.text_area :exam, autofocus: true, class: "form-control", rows:"4", placeholder:"有無作業 / 考試考多少次 / 如何算分" %></div>
 
-      </div>
+    
       <br />
-          <%= f.submit '送出', class: "btn btn-lg btn-primary btn-block" %>
+          <%= f.submit '送出', class: "btn btn-lg btn-primary" %>
+          <%= link_to '返回', courses_path, class: "btn btn-lg btn-success"  %>
+
           <% end %>
 
         </form>

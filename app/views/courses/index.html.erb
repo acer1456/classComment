@@ -1,36 +1,45 @@
-<!-- <script type="text/javascript">
-('#myModal').modal('show.bs.modal', function () {
-  $('#myModal').modal({
-    focus: true,
-    show: true
-  })
-  $('#myModal .modal-content').empty();
- });
-</script> -->
 
 
 <div class="row" >
 
 
-<div class="col-sm-3 col-md-3">
+    <!-- <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+        <img class="mr-3" src="https://getbootstrap.com/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Bootstrap</h6>
+          <small>Since 2011</small>
+        </div>
+      </div> -->
+<div class="col-sm-12 col-md-12 my-3 p-3 bg-white rounded box-shadow">
+  <form class="form-inline">
+    <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "search"%>
+    <%= submit_tag "搜尋", class: "btn btn-sm btn-info" %>
+    <% end %>
+  </form>
+</div>
+
+
+<!-- <div class="col-sm-3 col-md-3">
   <div class="alert" style="padding:20px">
 <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
 <p><%= text_field_tag :search, params[:search], placeholder: "課程 老師 類別",  class: "form-control"%></p>
 <%= submit_tag "搜尋", class: "btn btn-block btn-info" %>
 <% end %>
-  <!-- <div class="">
+
+  <div class="">
   <a href="?utf8=✓&search=通識&commit=搜尋" class="btn btn-sm btn-success">通識</a>
   <a href="?utf8=✓&search=體育&commit=搜尋" class="btn btn-sm btn-success">體育</a>
   <a href="?utf8=✓&search=通識-社科&commit=搜尋" class="btn btn-sm btn-success">通識-社科</a>
   <a href="?utf8=✓&search=通識-自然&commit=搜尋" class="btn btn-sm btn-success">通識-自然</a>
   </div>
   <br>
-  <a href="?utf8=✓&search=通識-文藝&commit=搜尋" class="btn btn-sm btn-success">通識-文藝</a> -->
+  <a href="?utf8=✓&search=通識-文藝&commit=搜尋" class="btn btn-sm btn-success">通識-文藝</a>
   </div>
-</div>
+</div> -->
 
-
-<div class="col-sm-9 col-md-9">
+<div class="col-sm-12 col-md-12 my-3 p-3 bg-white rounded box-shadow">
+    <h6 class="border-bottom border-gray pb-2 mb-0"></h6>
   <table class="table table-sm table-hover">
     <thead>
       <tr>
@@ -45,7 +54,7 @@
     <tbody>
       <% @courses.each do |course| %>
       <tr>
-        <td><%= link_to course.name, course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"} %></td>
+        <td><%= link_to course.name, course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, style: "text-decoration:none" %></td>
         <td id="hid"><%= course.semester %></td>
         <td id="hid"><%= course.category %></td>
         <td><%= course.teacher %></td>
@@ -55,6 +64,7 @@
         <% end %>
     </tbody>
   </table>
+</div>
 </div>
 
 

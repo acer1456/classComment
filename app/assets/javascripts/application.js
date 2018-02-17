@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require backtotop
-//= require tether.min
+//= require jquery-3.2.1.slim.min
+//= require popper.min
 //= require bootstrap.min
-//= require jquery-3.2.1.min
+//= require holder.min
+//= require offcanvas.js
 //= require_tree .

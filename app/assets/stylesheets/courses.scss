@@ -1,3 +1,45 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search{
+	width:95%;
+	border:none;
+	padding:0 5px;
+	font-size:1.2rem;
+	font-weight:100;
+	background:transparent;
+}
+
+@media only screen and (max-width: 1024px) {
+    .search {
+        width: 93%;
+        border:none;
+        padding:0 5px;
+        font-size:1.2rem;
+        font-weight:100;
+        background:transparent;
+    }
+  }
+
+@media only screen and (max-width: 767px) {
+    .search {
+        width: 87%;
+        border:none;
+        padding:0 5px;
+        font-size:1.2rem;
+        font-weight:100;
+        background:transparent;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .search {
+        width: 85%;
+        border:none;
+        padding:0 5px;
+        font-size:1.2rem;
+        font-weight:100;
+        background:transparent;
+    }
+  }
