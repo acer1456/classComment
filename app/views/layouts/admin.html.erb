@@ -48,15 +48,14 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-toggleable-md sticky-top navbar-light bg-faded navbar-inverse" style="background-color: #000;">
-  <div class="navbar-header">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <%= link_to '後台系統', admin_users_path, class: 'navbar-brand' %>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <%= link_to '後台系統', admin_users_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
       <!-- <li><a class="nav-link" href="#">學分輕鬆拿</a></li> -->
     </ul>
     <ul class="navbar-nav navbar-right">
@@ -66,9 +65,13 @@
       <li><%= link_to "課程管理", admin_courses_path, class: "btn btn-outline-info" %></li>&emsp;
         <li><%= link_to "離開後台", root_path, class: "btn btn-outline-primary" %></li>&emsp;
       <% end %>
-    </ul>
-  </div>
-</nav>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+      </nav>
 
 <% if notice %>
   <p class="alert alert-success" align="center"><%= notice %></p>

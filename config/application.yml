@@ -1,14 +1,16 @@
 defaults: &defaults
   app_name: "選課世新 SHU Course"
+  domain: "https://shucourse.herokuapp.com"
   facebook_app_id: "1885976688313335"
   facebook_secret: "67e66acf9ba7f167e908c5d8fe94c7d9"
-  # facebook_app_id: "1893319974245673"
-  # facebook_secret: "9488c1fa871f1bb5e9e4d79b989d80ef"
+
 
 development:
   <<: *defaults
-   domain: "https://shucourse.herokuapp.com" #最後 "/" 要拿掉
-  # domain: "http://localhost:3000/"
+  app_name: "選課世新 SHU Course"
+  domain: "http://localhost:3000/"
+  facebook_app_id: "1893319974245673"
+  facebook_secret: "9488c1fa871f1bb5e9e4d79b989d80ef"
 
 
 test:
@@ -16,3 +18,8 @@ test:
 
 production:
   <<: *defaults
+  app_name: "選課世新 SHU Course"
+  facebook_app_id: "1885976688313335"
+  facebook_secret: "67e66acf9ba7f167e908c5d8fe94c7d9"
+  domain: "https://shucourse.herokuapp.com"
+
