@@ -12,6 +12,7 @@ class Admin::UsersController < AdminController
           format.html
           format.js
         end
+
    end
 
    def show

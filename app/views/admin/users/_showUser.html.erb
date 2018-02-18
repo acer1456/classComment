@@ -15,7 +15,7 @@
 <!-- Modal -->
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color:#34495E; color:#fff">
+      <div class="modal-header" style="background-color:#353A3F; color:#fff">
         <h5 class="modal-title" id="exampleModalLabel"><%= @user.name %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -27,7 +27,7 @@
         <b>信箱：</b><span  class="span2"><%= @user.email %></span></p>
 
       </div>
-      <div class="modal-body" style="background-color:#455A64; color:#fff">
+      <div class="modal-body" style="background-color:#353A3F; color:#fff">
 
         <strong>註冊於:</strong>&emsp;<span><%= @user.created_at %></span><br>
         <strong>登入次數:</strong>&emsp;<span><%= @user.sign_in_count %></span><br>
@@ -36,7 +36,13 @@
 
       </div>
       <div class="modal-body">
-        <p><b>管理員：</b><span class="span2"><%= @user.admin %></span></p>
+        <p><b>管理員：</b>
+          <% if @user.admin == true %>
+          <b style="color:green">YES</b>
+        <% else %>
+          <span style="color:red">NO</span>
+        <% end %>
+        </p>
       </div>
     </div>
   </div>

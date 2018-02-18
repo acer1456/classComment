@@ -9,6 +9,7 @@
   <meta name="og:type" content="website">
   <meta name="og:image" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
 
   <link rel="icon" src="public/favicon.ico">
   <link rel="apple-touch-icon" src="public/favicon.ico">
@@ -16,8 +17,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
-
+  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" rel="stylesheet">
+  
 
   <style media="screen">
 
@@ -61,9 +63,9 @@
     <ul class="navbar-nav navbar-right">
 
       <% if current_user.try(:admin?) %>
-      <li><%= link_to "使用者管理", admin_users_path, class: "btn btn-outline-info" %></li>&emsp;
-      <li><%= link_to "課程管理", admin_courses_path, class: "btn btn-outline-info" %></li>&emsp;
-        <li><%= link_to "離開後台", root_path, class: "btn btn-outline-primary" %></li>&emsp;
+      <!-- <li class="nav-link"><%= current_user.name %></li> -->
+      <li class="nav-link"><img src="<%= current_user.image %>" class="rounded-circle" width="25" height="100%" alt=""></li>
+        <li><%= link_to "離開後台", root_path, class: "nav-link" %></li>
       <% end %>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
@@ -73,6 +75,14 @@
         </div>
       </nav>
 
+      <div class="nav-scroller bg-white box-shadow">
+          <nav class="nav nav-underline">
+            <%= link_to '主控台',  admin_console_index_path, class: 'nav-link active' %>
+            <%= link_to '課程管理',  admin_courses_path, class: 'nav-link' %>
+            <%= link_to "使用者管理", admin_users_path, class: "nav-link" %><
+          </nav>
+        </div>
+
 <% if notice %>
   <p class="alert alert-success" align="center"><%= notice %></p>
 <% end %>
@@ -80,8 +90,8 @@
   <p class="alert alert-danger" align="center"><%= alert %></p>
 <% end %>
 
-<div style="padding:30px">
-<%= yield %>
+<div style="padding:10px 30px 10px 30px">
+  <%= yield %>
 </div>
 
 <!-- <footer class="footer">
@@ -89,6 +99,11 @@
         <span class="text-muted"> &copy; 選課世新 SHU Course 2017</span>
       </div>
 </footer> -->
+
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
 
 <script id="_wau553">var _wau = _wau || [];
 _wau.push(["tab", "e9ip0v5hww7m", "553", "left-lower"]);
@@ -99,15 +114,35 @@ document.getElementsByTagName("head")[0].appendChild(s);
 
 <script type="text/javascript">
 $(document).ready(function(){
-    $('#myTable').DataTable();
+    $('#myTable').DataTable( {
+      "language": {
+          "lengthMenu": "每頁 _MENU_ 資料",
+          "emptyTable": "無資料",
+          "zeroRecords": "沒有找到任何符合資料",
+          "info": "第 _PAGE_ 頁 ( 總共 _PAGES_ 頁 )",
+          "infoEmpty": "沒有資料",
+          "search":  "搜尋:",
+          "infoFiltered": "(從 _MAX_ 筆資料查詢)",
+          "next": "下一頁",
+          "processing":     "處理中...",
+          "loadingRecords": "載入中...",
+          "paginate": {
+            "first":      "最前頁",
+            "last":       "最後頁",
+            "next":       "下一頁",
+            "previous":   "前一頁"
+        },
+      }
+  } );
     responsive: true
+    fixedHeader: true
 });
 </script>
 
-<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap4.min.js"></script>
+
+
+<!-- <script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap4.min.js"></script> -->
 
 
 </body>

@@ -2,7 +2,6 @@ class AdminController < ApplicationController
   before_filter :verify_is_admin
   layout 'admin'
 
-
   private
 
   def verify_is_admin

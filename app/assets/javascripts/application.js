@@ -17,4 +17,6 @@
 //= require bootstrap.min
 //= require holder.min
 //= require offcanvas.js
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

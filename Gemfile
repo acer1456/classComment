@@ -31,6 +31,10 @@ gem 'omniauth-facebook'
 gem 'settingslogic' #管理我們的秘密key
 gem 'therubyracer'
 gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'kaminari'
+gem "chartkick"
+gem 'groupdate'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

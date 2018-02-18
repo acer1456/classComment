@@ -3,10 +3,15 @@ $('#myModal').html("<%= escape_javascript(render :partial => 'event') %>");
 ('#myModal').on('show.bs.modal', function () {
   $('#myModal').modal({
     focus: true,
-    show: true
+    show: true,
+    keyboard: true
   })
  });
 
-$('#myModal').on('hidden.bs.modal', function () {
-   $('#myModal .modal-content').empty();
- });
+$("#myModal").on("hidden.bs.modal", function(){
+  // $('#myModal .modal-content').html("");
+          // remove the bs.modal data attribute from it
+          $(this).removeData('bs.modal');
+          // and empty the modal-content element
+          $('#myModal .modal-content').empty();
+});

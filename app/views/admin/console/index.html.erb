@@ -1,0 +1,46 @@
+<style>
+    .card{
+        border-style: hidden;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-4" align="center">
+        <div class="card  my-3 p-3 bg-white rounded box-shadow">
+                <h3><%= @users.length.to_s %></h3>會員<br>數量
+        </div>
+    </div>
+
+    <div class="col-4" align="center">
+        <div class="card  my-3 p-3 bg-white rounded box-shadow">
+                <h3><%= @courses.length.to_s %></h3>心得<br>數量         
+        </div>
+    </div>
+
+    <div class="col-4" align="center">
+        <div class="card  my-3 p-3 bg-white rounded box-shadow">
+                <h3><%= current_user.sign_in_count  %></h3>登入<br>次數
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" align="center">
+        <div class="card my-3 p-3 bg-white rounded box-shadow">
+            <h4>各心得數量</h4>
+            <hr>
+                <%= pie_chart Course.group(:category).count , colors: ["pink", "#81D4FA", "#CE93D8", "#F48FB1", "#ef9a9a", "#A5D6A7", "#FFF59D", "#BCAAA4", "B0BEC5"] ,  legend: "bottom" %>
+                <!-- <%= column_chart Course.group(:category).count, colors: ["pink", "yellow", "blue"] %> -->
+
+        </div>
+    </div>
+    <div class="col-12" align="center">
+            <div class="card my-3 p-3 bg-white rounded box-shadow">
+                    <h4>每天使用者數量</h4>
+                    <hr>
+                    <%= area_chart User.group_by_day(:created_at).count , colors: ["B0BEC5"]%>
+            </div>
+        </div>
+</div>
+
