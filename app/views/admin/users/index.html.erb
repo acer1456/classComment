@@ -26,10 +26,11 @@
           <td><%= user.name %></td>
           <td> <img src="<%= user.image %>" width="40px" height="40px"> </td>
           <td><%= user.email %></td>
-          <td><%= user.last_sign_in_at.to_s(:long_ordinal) %></td>
+          <td><%= user.last_sign_in_at.to_s(:db) %> (<%= time_ago_in_words(user.last_sign_in_at) %>)</td>
           <td><%= user.sign_in_count %></td>
           <td><%= user.last_sign_in_ip %></td>
-          <td><%= user.created_at.to_s(:long_ordinal) %></td>
+          <td><%= user.created_at.to_s(:db) %> (<%= time_ago_in_words(user.created_at) %>)</td>
+
 
           <td>
             <% if user.admin == true %>

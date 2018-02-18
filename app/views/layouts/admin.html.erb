@@ -52,7 +52,7 @@
 
 
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-        <%= link_to '後台系統', admin_users_path, class: 'navbar-brand' %>
+        <%= link_to '後台系統', admin_console_index_path, class: 'navbar-brand' %>
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -77,9 +77,9 @@
 
       <div class="nav-scroller bg-white box-shadow">
           <nav class="nav nav-underline">
-            <%= link_to '主控台',  admin_console_index_path, class: 'nav-link active' %>
-            <%= link_to '課程管理',  admin_courses_path, class: 'nav-link' %>
-            <%= link_to "使用者管理", admin_users_path, class: "nav-link" %><
+            <%= link_to '主控台',  admin_console_index_path, class: "nav-link #{cp(admin_console_index_path)}" %>
+            <%= link_to '課程管理',  admin_courses_path, class: "nav-link #{cp(admin_courses_path)}" %>
+            <%= link_to "使用者管理", admin_users_path, class: "nav-link #{cp(admin_users_path)}" %>
           </nav>
         </div>
 

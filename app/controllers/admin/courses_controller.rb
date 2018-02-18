@@ -6,7 +6,7 @@ class Admin::CoursesController < AdminController
      if params[:search]
                  @courses = Course.where('name LIKE ? OR teacher LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
          else
-                 @courses = Course.all
+                 @courses = Course.order("created_at DESC")
          end
    end
 

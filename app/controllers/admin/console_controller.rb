@@ -1,8 +1,8 @@
 class Admin::ConsoleController < AdminController
 
     def index
-        @courses = Course.all
-        @users = User.all
+        @courses = Course.order("created_at DESC")
+        @users = User.order("created_at DESC")
     end
 
 end

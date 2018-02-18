@@ -5,7 +5,7 @@ class Admin::UsersController < AdminController
      if params[:search]
                  @users = User.where('name LIKE ? OR email LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
          else
-                 @users = User.all
+                 @users = User.order("created_at DESC")
          end
      
         respond_to do |format|
