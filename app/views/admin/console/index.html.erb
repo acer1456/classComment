@@ -39,7 +39,7 @@
             <div class="card my-3 p-3 bg-white rounded box-shadow">
                     <h4>每天使用者數量</h4>
                     <hr>
-                    <%= area_chart User.group_by_day(:created_at).count , colors: ["B0BEC5"]%>
+                    <%= area_chart User.group_by_day(:current_sign_in_at).count , colors: ["B0BEC5"]%>
             </div>
         </div>
 </div>
