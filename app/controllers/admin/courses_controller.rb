@@ -3,11 +3,11 @@ class Admin::CoursesController < AdminController
 
 
   def index
-     if params[:search]
-                 @courses = Course.where('name LIKE ? OR teacher LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
-         else
-                 @courses = Course.order("created_at DESC")
-         end
+    #  if params[:search]
+    #              @courses = Course.where('name LIKE ? OR teacher LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+    #      else
+                 @courses = Course.order('created_at DESC')
+        #  end
    end
 
    def show
@@ -23,10 +23,11 @@ class Admin::CoursesController < AdminController
    def update
      respond_to do |format|
       if @course.update(admin_course_params)
-        format.html { redirect_to(admin_courses_path, :notice => 'Category was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to admin_courses_path, notice: '已成功修改課程評價。' }
+        format.json { head :no_content }
+        format.js
       else
-        format.html { render :action => "edit" }
+        format.html { render :edit }
         format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
       end
     end
