@@ -40,7 +40,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: '已成功建立課程評價。' }
+        format.html { redirect_to courses_url, notice: '已成功建立課程評價。' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }

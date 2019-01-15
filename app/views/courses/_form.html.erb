@@ -22,7 +22,7 @@
         <form>
 
                 <p>課程名稱</p>
-                <div><%= f.text_field :name, autofocus: true, type: "text", class: "form-control", placeholder:"資訊素養 (拜託請打全名謝謝)" %></div>
+                <div><%= f.text_field :name, autofocus: true, type: "text", class: "form-control", placeholder:"資訊素養 (拜託請打全名謝謝)", required: true %></div>
 
                 <br />
 
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-7">
                   <p>課程老師</p>
-                  <div><%= f.text_field :teacher, autofocus: true, type: "text", class: "form-control", placeholder:"你記得是誰吧？" %></div>
+                  <div><%= f.text_field :teacher, autofocus: true, type: "text", class: "form-control", placeholder:"你記得是誰吧？", required: true %></div>
                 </div>
                 <div class="col-5">
                   <p>打幾顆 <i class="fa fa-star" style="color: #FDD835"></i> ？</p>
@@ -54,17 +54,17 @@
             <br />
 
                 <p>心得感想</p>
-                <div><%= f.text_area :comment, autofocus: true, class: "form-control", rows:"4", placeholder:"這堂課你有什麼感想？ 好玩嗎？ 學很多嗎？ 好過嗎？" %></div>
+                <div><%= f.text_area :comment, autofocus: true, class: "form-control", rows:"4", placeholder:"這堂課你有什麼感想？ 好玩嗎？ 學很多嗎？ 好過嗎？", required: true %></div>
 
             <br />
 
                 <p>上課方式</p>
-                <div><%= f.text_area :detail, autofocus: true, class: "form-control", rows:"4", placeholder:"老師有沒有什麼固定的上課習慣跟規定呢？" %></div>
+                <div><%= f.text_area :detail, autofocus: true, class: "form-control", rows:"4", placeholder:"老師有沒有什麼固定的上課習慣跟規定呢？", required: true %></div>
 
             <br />
 
                 <p>作業考試 / 算分方式</p>
-                <div><%= f.text_area :exam, autofocus: true, class: "form-control", rows:"4", placeholder:"有無作業 / 考試考多少次 / 如何算分" %></div>
+                <div><%= f.text_area :exam, autofocus: true, class: "form-control", rows:"4", placeholder:"有無作業 / 考試考多少次 / 如何算分", required: true %></div>
 
     
       <br />
