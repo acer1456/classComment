@@ -53,7 +53,7 @@
     </thead>
     <tbody>
       <% @courses.each do |course| %>
-      <tr>
+      <tr onclick='location.href="<%= course_path(course) %>"'>
         <td><%= link_to course.name, course_path(course), :remote => true, data: {toggle: "modal", target: "#myModal"}, style: "text-decoration:none" %></td>
         <td id="hid"><%= course.semester %></td>
         <td id="hid"><%= course.category %></td>
