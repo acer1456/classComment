@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     respond_to do |format|
-      format.html
+      # format.html
       format.json
       format.js
     end
